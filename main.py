@@ -9,21 +9,21 @@ pygame.init()
 screen = pygame.display.set_mode((800,600))
 
 # background
-background = pygame.image.load('background.png')
+background = pygame.image.load('image/background.png')
 
 # title and icon
 pygame.display.set_caption('Space Invaders')
-icon = pygame.image.load('ufo.png')
+icon = pygame.image.load('image/ufo.png')
 pygame.display.set_icon(icon)
 
 # player
-playerImg = pygame.image.load('player.png')
+playerImg = pygame.image.load('image/player.png')
 playerX = 370
 playerY = 480
 playerX_change = 0
 
 # enemy
-enemyImg = pygame.image.load('enemy.png')
+enemyImg = pygame.image.load('image/enemy.png')
 enemyX = randint(0, 735)
 enemyY = randint(50, 150)
 enemyX_change = 4.7
@@ -33,7 +33,7 @@ enemyY_change = 40
 
 # 'ready' - can't see bullet on screen
 # 'fire' - bullet is moving
-bulletImg = pygame.image.load('bullet.png')
+bulletImg = pygame.image.load('image/bullet.png')
 bulletX = 0
 bulletY = 480
 bulletX_change = 0
@@ -120,7 +120,6 @@ while running:
     elif bullet_state == 'fire':
         fire_bullet(bulletX, bulletY)
         bulletY -= bulletY_change
-
 
     # collision
     collision = isCollision(enemyX, enemyY, bulletX, bulletY)
